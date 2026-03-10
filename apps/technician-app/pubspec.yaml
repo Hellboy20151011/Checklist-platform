@@ -1,0 +1,33 @@
+name: technician_app
+description: Flutter Mobile App für Techniker zur Bearbeitung von Checklisten, auch offline.
+version: 1.0.0+1
+publish_to: "none"
+
+environment:
+  sdk: ">=3.0.0 <4.0.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+  cupertino_icons: ^1.0.8
+  # HTTP-Client
+  http: ^1.2.0
+  # Offline-Speicher (SQLite)
+  drift: ^2.18.0
+  sqlite3_flutter_libs: ^0.5.0
+  path_provider: ^2.1.2
+  path: ^1.9.0
+  # Shared Preferences für einfache Einstellungen
+  shared_preferences: ^2.2.3
+  # State Management
+  flutter_bloc: ^8.1.5
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^4.0.0
+  build_runner: ^2.4.9
+  drift_dev: ^2.18.0
+
+flutter:
+  uses-material-design: true
