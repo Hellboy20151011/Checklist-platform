@@ -28,13 +28,20 @@ npm run start:dev
 Erstelle eine `.env` Datei basierend auf `.env.example`:
 
 ```
-DATABASE_HOST=localhost
-DATABASE_PORT=5432
-DATABASE_NAME=checklist_platform
-DATABASE_USER=postgres
-DATABASE_PASSWORD=postgres
+PORT=3000
+NODE_ENV=development
+
+DB_HOST=localhost
+DB_PORT=5432
+DB_USERNAME=postgres
+DB_PASSWORD=postgres
+DB_NAME=checklist_platform
+DB_SSL=false
+
 JWT_SECRET=your-secret-key
 JWT_EXPIRES_IN=1d
+
+CORS_ORIGIN=http://localhost:4000
 ```
 
 ## Modulstruktur
