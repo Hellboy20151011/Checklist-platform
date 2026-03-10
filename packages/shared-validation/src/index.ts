@@ -30,11 +30,13 @@ export function isValidUuid(value: string): boolean {
  * Validates that a template title is non-empty and within max length.
  */
 export function isValidTemplateTitle(title: string, maxLength = 255): boolean {
-  return (
-    typeof title === 'string' &&
-    title.trim().length > 0 &&
-    title.length <= maxLength
-  );
+  if (typeof title !== 'string') {
+    return false;
+  }
+
+  const trimmedTitle = title.trim();
+
+  return trimmedTitle.length > 0 && trimmedTitle.length <= maxLength;
 }
 
 /**

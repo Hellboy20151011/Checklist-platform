@@ -95,6 +95,7 @@ packages/
 - Eingereicht
 - In Prüfung
 - Freigegeben
+- Abgelehnt
 - Zur Nacharbeit zurückgegeben
 
 ### Synchronisation

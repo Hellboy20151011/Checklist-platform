@@ -1,7 +1,7 @@
 export enum UserRole {
-  ADMIN = 'admin',
-  TECHNICIAN = 'technician',
-  REVIEWER = 'reviewer',
+  ADMIN = 'ADMIN',
+  TECHNICIAN = 'TECHNICIAN',
+  REVIEWER = 'REVIEWER',
 }
 
 export enum TemplateStatus {
