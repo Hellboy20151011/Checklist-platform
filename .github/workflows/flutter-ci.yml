@@ -1,0 +1,51 @@
+name: Flutter CI
+
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - 'apps/technician-app/**'
+      - '.github/workflows/flutter-ci.yml'
+  pull_request:
+    paths:
+      - 'apps/technician-app/**'
+      - '.github/workflows/flutter-ci.yml'
+
+concurrency:
+  group: flutter-ci-${{ github.ref }}
+  cancel-in-progress: true
+
+permissions:
+  contents: read
+
+jobs:
+  test:
+    name: Flutter Analyze / Test
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Flutter
+        uses: subosito/flutter-action@v2
+        with:
+          flutter-version: '3.29.0'
+          channel: stable
+          cache: true
+
+      - name: Install dependencies
+        working-directory: apps/technician-app
+        run: flutter pub get
+
+      - name: Check formatting (dart format)
+        working-directory: apps/technician-app
+        run: dart format --set-exit-if-changed .
+
+      - name: Analyze code
+        working-directory: apps/technician-app
+        run: flutter analyze
+
+      - name: Run tests
+        working-directory: apps/technician-app
+        run: flutter test
