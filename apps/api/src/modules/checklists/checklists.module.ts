@@ -12,4 +12,3 @@ import { ChecklistsService } from './checklists.service';
   exports: [ChecklistsService],
 })
 export class ChecklistsModule {}
-

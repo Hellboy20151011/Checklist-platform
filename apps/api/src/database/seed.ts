@@ -30,10 +30,8 @@ async function seed(): Promise<void> {
 
   const usersRepository = dataSource.getRepository(User);
 
-  const adminEmail =
-    process.env.SEED_ADMIN_EMAIL ?? 'admin@checklist.local';
-  const adminPassword =
-    process.env.SEED_ADMIN_PASSWORD ?? 'Admin1234!';
+  const adminEmail = process.env.SEED_ADMIN_EMAIL ?? 'admin@checklist.local';
+  const adminPassword = process.env.SEED_ADMIN_PASSWORD ?? 'Admin1234!';
   const adminName = process.env.SEED_ADMIN_NAME ?? 'Administrator';
 
   const existing = await usersRepository.findOneBy({ email: adminEmail });
@@ -54,9 +52,7 @@ async function seed(): Promise<void> {
     if (process.env.NODE_ENV !== 'production') {
       console.log(`Passwort: ${adminPassword}`);
     }
-    console.log(
-      'HINWEIS: Bitte das Passwort nach dem ersten Login ändern!',
-    );
+    console.log('HINWEIS: Bitte das Passwort nach dem ersten Login ändern!');
   }
 
   await dataSource.destroy();
