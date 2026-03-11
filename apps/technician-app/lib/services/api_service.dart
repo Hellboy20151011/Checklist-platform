@@ -45,7 +45,9 @@ class ApiService {
       return list.cast<Map<String, dynamic>>();
     }
 
-    throw Exception('Fehler beim Laden der Checklisten (${response.statusCode})');
+    throw Exception(
+      'Fehler beim Laden der Checklisten (${response.statusCode})',
+    );
   }
 
   /// Meldet den Benutzer ab und löscht das Zugriffstoken.
