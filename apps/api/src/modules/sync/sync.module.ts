@@ -7,4 +7,3 @@ import { SyncService } from './sync.service';
   providers: [SyncService],
 })
 export class SyncModule {}
-

@@ -1,4 +1,11 @@
-import { Column, CreateDateColumn, Entity, JoinColumn, ManyToOne, PrimaryGeneratedColumn } from 'typeorm';
+import {
+  Column,
+  CreateDateColumn,
+  Entity,
+  JoinColumn,
+  ManyToOne,
+  PrimaryGeneratedColumn,
+} from 'typeorm';
 import { ChecklistInstance } from '../../checklists/entities/checklist-instance.entity';
 import { User } from '../../users/entities/user.entity';
 

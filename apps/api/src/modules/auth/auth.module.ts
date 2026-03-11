@@ -16,10 +16,7 @@ import { JwtStrategy } from './strategies/jwt.strategy';
       imports: [ConfigModule],
       inject: [ConfigService],
       useFactory: (configService: ConfigService) => {
-        const expiresInRaw = configService.get<string>(
-          'JWT_EXPIRES_IN',
-          '86400',
-        );
+        const expiresInRaw = configService.get<string>('JWT_EXPIRES_IN', '86400');
         const expiresIn = /^\d+$/.test(expiresInRaw)
           ? parseInt(expiresInRaw, 10)
           : (expiresInRaw as StringValue);
@@ -35,4 +32,3 @@ import { JwtStrategy } from './strategies/jwt.strategy';
   exports: [JwtModule],
 })
 export class AuthModule {}
-

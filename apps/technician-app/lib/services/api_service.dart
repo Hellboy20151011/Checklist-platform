@@ -12,9 +12,9 @@ class ApiService {
   String? get accessToken => _accessToken;
 
   Map<String, String> get _authHeaders => {
-        'Content-Type': 'application/json',
-        if (_accessToken != null) 'Authorization': 'Bearer $_accessToken',
-      };
+    'Content-Type': 'application/json',
+    if (_accessToken != null) 'Authorization': 'Bearer $_accessToken',
+  };
 
   /// Meldet einen Benutzer an und speichert das Zugriffstoken.
   Future<User> login(String email, String password) async {
@@ -45,7 +45,9 @@ class ApiService {
       return list.cast<Map<String, dynamic>>();
     }
 
-    throw Exception('Fehler beim Laden der Checklisten (${response.statusCode})');
+    throw Exception(
+      'Fehler beim Laden der Checklisten (${response.statusCode})',
+    );
   }
 
   /// Meldet den Benutzer ab und löscht das Zugriffstoken.
