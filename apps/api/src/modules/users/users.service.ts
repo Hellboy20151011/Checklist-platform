@@ -38,9 +38,7 @@ export class UsersService {
       email: createUserDto.email,
     });
     if (existing) {
-      throw new ConflictException(
-        `Benutzer mit E-Mail ${createUserDto.email} existiert bereits`,
-      );
+      throw new ConflictException(`Benutzer mit E-Mail ${createUserDto.email} existiert bereits`);
     }
     const passwordHash = await bcrypt.hash(createUserDto.password, 10);
     const user = this.usersRepository.create({
@@ -52,4 +50,3 @@ export class UsersService {
     return this.usersRepository.save(user);
   }
 }
-

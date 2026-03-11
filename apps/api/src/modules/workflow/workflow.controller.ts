@@ -7,9 +7,7 @@ export class WorkflowController {
   constructor(private readonly workflowService: WorkflowService) {}
 
   @Get('instance/:instanceId')
-  findByInstance(
-    @Param('instanceId') instanceId: string,
-  ): Promise<WorkflowEvent[]> {
+  findByInstance(@Param('instanceId') instanceId: string): Promise<WorkflowEvent[]> {
     return this.workflowService.findByInstance(instanceId);
   }
 }
